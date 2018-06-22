@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="Producto" table="E01_PRODUCTO">
+    <class name="Producto" table="e1producto">
         <id name="codigo_producto" column="codigo_producto">
             <generator class="increment"></generator>
         </id>
@@ -10,7 +10,7 @@
         <property name="descripcion" column="descripcion"/>
         <property name="precio" column="precio"/>
         <property name="stock" column="stock"/>
-        <bag name="DetalleFactura" table="e01_detalle_factura" inverse="false" fetch="select">
+        <bag name="DetalleFactura" table="e1detalle" inverse="false" fetch="select">
               <key column="codigo_producto"/>
               <one-to-many class="DetalleFactura"/> 
         </bag>
